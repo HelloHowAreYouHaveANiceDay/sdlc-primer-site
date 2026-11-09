@@ -2,7 +2,9 @@
 layout: base.njk
 title: Hello, site
 ---
-Version 4. Someone deleted the heading by accident.
+# Hello, site
+
+Version 3. Built from a Markdown file by a package, tested and deployed by a robot on every push.
 
 ## About
 
