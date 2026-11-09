@@ -1,0 +1,20 @@
+# Every morning: load the live site and fail loudly if it is down or the heading is missing.
+# A failed run emails the repo owner (GitHub's default notification for failed workflows).
+name: monitor
+
+on:
+  schedule:
+    - cron: "0 12 * * *"   # 12:00 UTC daily
+  workflow_dispatch:
+
+jobs:
+  check-live-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Load the live page
+        run: |
+          status=$(curl -s -o page.html -w "%{http_code}" https://hellohowareyouhaveaniceday.github.io/sdlc-primer-site/)
+          echo "HTTP $status"
+          test "$status" = "200"
+      - name: Check the heading is there
+        run: grep -q "<h1" page.html && echo "PASS  live page has a heading"
