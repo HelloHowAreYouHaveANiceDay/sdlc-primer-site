@@ -4,7 +4,7 @@ title: Hello, site
 ---
 # Hello, site
 
-Version 3. Built from a Markdown file by a package, tested and deployed by a robot on every push.
+Version 5. Our prices start at $0 per month!!
 
 ## About
 
