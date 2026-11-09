@@ -13,6 +13,7 @@ Every step in the post is a real commit in this repo's history (`git log`).
 | `package-lock.json` | The exact versions installed, so every machine gets the same ones |
 | `test.js` | A tiny test: the built page must have a title and a heading |
 | `.github/workflows/deploy.yml` | The robot: on every push to `main`, install, build, test, publish |
+| `.github/workflows/monitor.yml` | The watchman: every day, load the live site and fail loudly if it is broken |
 
 Run it yourself:
 
